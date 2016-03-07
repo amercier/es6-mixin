@@ -1,4 +1,4 @@
-npm-package-skeleton
+node-es6-mixin
 ====================
 
 Skeleton of a simple NPM Package with Babel and CI already configured.
@@ -31,9 +31,9 @@ Skeleton of a simple NPM Package with Babel and CI already configured.
 1. Clone this repository  
    <small>or alternatively: create a new one, then rebase from this one</small>
 2. Replace the following occurrences
-  - [ ] `amercier/npm-package-skeleton` → *your repo slug*
-  - [ ] `npm-package-skeleton` → *your project name*
-  - [ ] `package-skeleton` → *your NPM package name*
+  - [ ] `amercier/node-es6-mixin` → *your repo slug*
+  - [ ] `node-es6-mixin` → *your project name*
+  - [ ] `es6-mixin` → *your NPM package name*
   - [ ] `Alex Mercier` → *your name*
   - [ ] `pro.alexandre.mercier@gmail.com` → *your public email address*
   - [ ] `http://amercier.com` → *your website*
@@ -66,34 +66,34 @@ Skeleton of a simple NPM Package with Babel and CI already configured.
 > **Note:** the content after this is the actual package documentation (to be edited after cloning).
 
 
-npm-package-skeleton
+node-es6-mixin
 ====================
 
-My new awesome-package created using [package-skeleton](https://www.npmjs.com/package-skeleton).
+My new awesome-package created using [es6-mixin](https://www.npmjs.com/es6-mixin).
 
-[![Latest Stable Version](https://img.shields.io/npm/v/package-skeleton.svg)](https://www.npmjs.com/package/package-skeleton)
-[![License](https://img.shields.io/npm/l/package-skeleton.svg)](https://www.npmjs.com/package/package-skeleton)
-[![Build Status](https://img.shields.io/travis/amercier/npm-package-skeleton/master.svg)](https://travis-ci.org/amercier/npm-package-skeleton)
+[![Latest Stable Version](https://img.shields.io/npm/v/es6-mixin.svg)](https://www.npmjs.com/package/es6-mixin)
+[![License](https://img.shields.io/npm/l/es6-mixin.svg)](https://www.npmjs.com/package/es6-mixin)
+[![Build Status](https://img.shields.io/travis/amercier/node-es6-mixin/master.svg)](https://travis-ci.org/amercier/node-es6-mixin)
 
-[![Dependency Status](http://img.shields.io/gemnasium/amercier/npm-package-skeleton.svg)](https://gemnasium.com/amercier/npm-package-skeleton)
-[![NPM Downloads](https://img.shields.io/npm/dm/package-skeleton.svg)](https://www.npmjs.com/package/package-skeleton)
-[![Test Coverage](https://img.shields.io/codecov/c/github/amercier/npm-package-skeleton/master.svg)](https://codecov.io/github/amercier/npm-package-skeleton?branch=master)
-[![API Documentation](https://doc.esdoc.org/github.com/amercier/npm-package-skeleton/badge.svg)](https://doc.esdoc.org/github.com/amercier/npm-package-skeleton/)
-[![Code Climate](https://img.shields.io/codeclimate/github/amercier/npm-package-skeleton.svg)](https://codeclimate.com/github/amercier/npm-package-skeleton)
+[![Dependency Status](http://img.shields.io/gemnasium/amercier/node-es6-mixin.svg)](https://gemnasium.com/amercier/node-es6-mixin)
+[![NPM Downloads](https://img.shields.io/npm/dm/es6-mixin.svg)](https://www.npmjs.com/package/es6-mixin)
+[![Test Coverage](https://img.shields.io/codecov/c/github/amercier/node-es6-mixin/master.svg)](https://codecov.io/github/amercier/node-es6-mixin?branch=master)
+[![API Documentation](https://doc.esdoc.org/github.com/amercier/node-es6-mixin/badge.svg)](https://doc.esdoc.org/github.com/amercier/node-es6-mixin/)
+[![Code Climate](https://img.shields.io/codeclimate/github/amercier/node-es6-mixin.svg)](https://codeclimate.com/github/amercier/node-es6-mixin)
 
 
 Installation
 ------------
 
-    npm install --save-dev package-skeleton
+    npm install --save-dev es6-mixin
 
 Usage
 -----
 
 ### ES5
 
-    var xxx = require('package-skeleton').default;
+    var xxx = require('es6-mixin').default;
 
 ### ES2015+
 
-    import xxx from 'package-skeleton';
+    import xxx from 'es6-mixin';
