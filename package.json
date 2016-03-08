@@ -1,6 +1,6 @@
 {
   "name": "es6-mixin",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Generic mixin superclass designed to be used with ES6 (ES2015) classes.",
   "license": "MIT",
   "repository": "amercier/node-es6-mixin",
