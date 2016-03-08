@@ -11,50 +11,7 @@ function entries(object) {
 
 /**
  * Generic mixin superclass. This class is intended to be extended by actual
- * mixins as in:
- *
- * ### Without any superclass
- *
- *     class Foo extends Mixin {
- *       bar() {
- *         return 'baz';
- *       }
- *     }
- *
- *     class Norf extends SomeParentClass {
- *       constructor() {
- *         super(); // SomeParentClass
- *         Foo.mixin(this);
- *       }
- *     }
- *
- *     new Norf().bar(); // => 'baz'
- *     new Norf() instanceof SomeParentClass; // => true
- *     new Norf() instanceof Foo; // => false
- *
- * ### With a superclass (which is a mixin)
- *
- *     class Foo extends Mixin { ... }
- *
- *     class Foo2 extends Foo {
- *       bar2() {
- *         return 'baz2';
- *       }
- *     }
- *
- *     // Same usage as in without superclass
- *
- * ### With a superclass (which is not a mixin)
- *
- *     import Foo from 'foo';
- *
- *     class FooMixin extends Mixin {
- *       static mixin(target = {}) {
- *         return super.mixin(target, Foo);
- *       }
- *     }
- *
- *     // Same usage as in without superclass
+ * mixins.
  */
 export default class Mixin {
 
