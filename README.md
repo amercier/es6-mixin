@@ -41,7 +41,7 @@ class Bar {
 new Bar().foo(); // => 'foo'
 ```
 
-### Create a mixin from an exitsing ES6 class
+### Create a mixin from an existing ES6 class
 
 ```es6
 import Mixin from 'es6-mixin';
