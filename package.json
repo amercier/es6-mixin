@@ -1,7 +1,7 @@
 {
   "name": "es6-mixin",
   "version": "0.1.0-alpha.2",
-  "description": "Skeleton of a simple NPM Package with Babel and CI already configured.",
+  "description": "Generic mixin superclass designed to be used with ES6 (ES2015) classes.",
   "license": "MIT",
   "repository": "amercier/node-es6-mixin",
   "author": "Alex Mercier <pro.alexandre.mercier@gmail.com> (http://amercier.com)",
@@ -18,21 +18,11 @@
   },
   "main": "dist/lib/index.js",
   "keywords": [
-    "package",
-    "skeleton",
-    "example",
-    "node",
-    "npm",
-    "babel",
-    "ci",
-    "code",
-    "codeclimate",
-    "codecov",
-    "coverage",
-    "eslint",
-    "gemnasium",
-    "istanbul",
-    "mocha"
+    "mixin",
+    "es6",
+    "class",
+    "protoype",
+    "babel"
   ],
   "dependencies": {
   },
