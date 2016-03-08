@@ -23,50 +23,54 @@ Usage
 
 ### Create a new mixin
 
-    import Mixin from 'es6-mixin';
+```es6
+import Mixin from 'es6-mixin';
 
-    class Foo extends Mixin {
-      foo() {
-        return 'foo';
-      }
-    }
+class Foo extends Mixin {
+  foo() {
+    return 'foo';
+  }
+}
 
-    class Bar {
-      constructor() {
-        Foo.mixin(this);
-      }
-    }
+class Bar {
+  constructor() {
+    Foo.mixin(this);
+  }
+}
 
-    new Bar().foo(); // => 'foo'
+new Bar().foo(); // => 'foo'
+```
 
 ### Create a mixin from an exitsing ES6 class
 
-    import Mixin from 'es6-mixin';
+```es6
+import Mixin from 'es6-mixin';
 
-    class Foo {
-      constructor(a, b, c) { ... }
-      foo() {
-        return 'foo';
-      }
-    }
+class Foo {
+  constructor(a, b, c) { ... }
+  foo() {
+    return 'foo';
+  }
+}
 
-    // Same with a "classic" ES5 prototype:
-    //
-    //   function Foo(a, b, c) { ... }
-    //   Foo.prototype.foo = {
-    //     return 'foo';
-    //   }
+// Same with a "classic" ES5 prototype:
+//
+//   function Foo(a, b, c) { ... }
+//   Foo.prototype.foo = {
+//     return 'foo';
+//   }
 
-    class Bar extends Mixin {
-      static mixin(target = {}) {
-        return Foo.mixin(target, Foo, 1, 2, 3); // 1, 2, 3 are passed to Foo's constructor
-      }
-    }
+class Bar extends Mixin {
+  static mixin(target = {}) {
+    return Foo.mixin(target, Foo, 1, 2, 3); // 1, 2, 3 are passed to Foo's constructor
+  }
+}
 
-    class Baz {
-      constructor() {
-        Bar.mixin(this);
-      }
-    }
+class Baz {
+  constructor() {
+    Bar.mixin(this);
+  }
+}
 
-    new Baz().foo(); // => 'foo'
+new Baz().foo(); // => 'foo'
+```
