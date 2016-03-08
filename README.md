@@ -16,7 +16,7 @@ Generic mixin superclass designed to be used with ES6 (ES2015) classes.
 Installation
 ------------
 
-    npm install --save-dev es6-mixin
+    npm install --save es6-mixin
 
 Usage
 -----
