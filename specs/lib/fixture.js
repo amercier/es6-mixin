@@ -1,4 +1,4 @@
-import Mixin from '../../src/lib/index';
+import { Mixin } from '../../src/lib/index';
 
 /**
  * [getFixture description]
@@ -57,6 +57,7 @@ export function getFixture() {
   return {
     SimpleMixin,
     PrototypeMixin,
+    ExistingClass,
     ClassMixin,
   };
 }

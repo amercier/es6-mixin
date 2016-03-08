@@ -1,8 +1,31 @@
 import { expect } from 'chai';
 import sinon, { spy } from 'sinon';
-import Mixin from '../../src/lib/index';
+import { mixin, Mixin } from '../../src/lib/index';
 import { getFixture } from './fixture';
 import { itExists, itIsAFunction } from './helpers';
+
+/** @test {mixin} */
+describe('mixin', () => {
+  itExists(mixin);
+  itIsAFunction(mixin);
+
+  it('copies methods from the given constructor\'s prototype', () => {
+    const { ExistingClass } = getFixture();
+    const target = {};
+
+    mixin(target, ExistingClass);
+    expect(target).to.contain.all.keys(['init']);
+  });
+
+  it('calls the given constructor with the given parameters', () => {
+    const { ExistingClass } = getFixture();
+    const initSpy = spy(ExistingClass.prototype, 'init');
+    const target = {};
+
+    mixin(target, ExistingClass, 1, 2, 3);
+    sinon.assert.calledWith(initSpy, 1, 2, 3);
+  });
+});
 
 /** @test {Mixin} */
 describe('Mixin', () => {
@@ -36,23 +59,6 @@ describe('Mixin', () => {
 
       const target = SimpleMixin.mixin();
       expect(target).to.contain.all.keys(['init']);
-    });
-
-    it('copies methods from the given constructor\'s prototype', () => {
-      const { SimpleMixin } = getFixture();
-      const target = {};
-
-      Mixin.mixin(target, SimpleMixin);
-      expect(target).to.contain.all.keys(['init']);
-    });
-
-    it('calls the given constructor with the given parameters', () => {
-      const { SimpleMixin } = getFixture();
-      const initSpy = spy(SimpleMixin.prototype, 'init');
-      const target = {};
-
-      Mixin.mixin(target, SimpleMixin, 1, 2, 3);
-      sinon.assert.calledWith(initSpy, 1, 2, 3);
     });
 
     it('copies methods from an existing ES5 prototype', () => {
