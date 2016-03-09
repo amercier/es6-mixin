@@ -18,7 +18,7 @@ export class Mixin {
   /**
    * Mixes in this class's methods into an existing object.
    * @param {object} [target={}] Any object to mix this class's methods into
-   * @param {object} [MixedIn=this] Constructor to be mixed in
+   * @param {function} [MixedIn=this] Constructor to be mixed in
    * @param {...*} [args] Arguments to pass to the mixed in constructor, if any
    * @return {object} The original target object, mutated
    */
@@ -39,10 +39,25 @@ export class Mixin {
 /**
  * Mixes in this class's methods into an existing object.
  * @param {object} [target={}] Any object to mix this class's methods into
- * @param {object} [MixedIn=Mixin] Constructor to be mixed in
+ * @param {function} [MixedIn=Mixin] Constructor to be mixed in
  * @param {...*} [args] Arguments to pass to the mixed in constructor, if any
  * @return {object} The original target object, mutated
  */
 export function mixin(target = {}, MixedIn = Mixin, ...args) {
   return Mixin.mixin(target, MixedIn, ...args);
+}
+
+/**
+ * Create a subclass of a constructor and mix 1 or many mixin into it.
+ * @param {function} SuperClass Class that will be used as super-class
+ * @param {...function} mixins Mixin to add
+ * @return {function} A new anonymous class that extends `SuperClass` and has all `mixins` mixed in
+ */
+export function mix(SuperClass, ...mixins) {
+  return class extends SuperClass {
+    constructor() {
+      super();
+      mixins.forEach(Mixedin => mixin(this, Mixedin));
+    }
+  };
 }
