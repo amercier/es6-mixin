@@ -55,8 +55,8 @@ export function mixin(target = {}, MixedIn = Mixin, ...args) {
  */
 export function mix(SuperClass, ...mixins) {
   return class extends SuperClass {
-    constructor() {
-      super();
+    constructor(...args) {
+      super(...args);
       mixins.forEach(Mixedin => mixin(this, Mixedin));
     }
   };
