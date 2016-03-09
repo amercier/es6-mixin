@@ -1,7 +1,7 @@
 es6-mixin
 =========
 
-Generic mixin superclass designed to be used with ES6 (ES2015) classes.
+Minimalist mixin helper designed to be used with ES6 (ES2015) classes.
 
 [![Latest Stable Version](https://img.shields.io/npm/v/es6-mixin.svg)](https://www.npmjs.com/package/es6-mixin)
 [![License](https://img.shields.io/npm/l/es6-mixin.svg)](https://www.npmjs.com/package/es6-mixin)

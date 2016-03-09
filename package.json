@@ -1,7 +1,7 @@
 {
   "name": "es6-mixin",
   "version": "0.2.0",
-  "description": "Generic mixin superclass designed to be used with ES6 (ES2015) classes.",
+  "description": "Minimalist mixin helper designed to be used with ES6 (ES2015) classes.",
   "license": "MIT",
   "repository": "amercier/node-es6-mixin",
   "author": "Alex Mercier <pro.alexandre.mercier@gmail.com> (http://amercier.com)",
@@ -19,7 +19,11 @@
   "main": "dist/lib/index.js",
   "keywords": [
     "mixin",
+    "mixins",
     "es6",
+    "es2015",
+    "es7",
+    "es2016",
     "class",
     "protoype",
     "babel"
