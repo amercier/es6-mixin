@@ -50,7 +50,7 @@ export function mixin(target = {}, MixedIn = Mixin, ...args) {
 /**
  * Create a subclass of a constructor and mix 1 or many mixin into it.
  * @param {function} SuperClass Class that will be used as super-class
- * @param {...function} mixins Mixin to add
+ * @param {...function} mixins Mixins to add
  * @return {function} A new anonymous class that extends `SuperClass` and has all `mixins` mixed in
  */
 export function mix(SuperClass, ...mixins) {
