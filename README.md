@@ -21,10 +21,73 @@ Installation
 Usage
 -----
 
-### Create a new mixin
+### Basic usage
 
-```es6
-import Mixin from 'es6-mixin';
+```javascript
+import { mixin } from 'es6-mixin';
+
+class Foo {
+  foo() {
+    return 'foo';
+  }
+}
+
+class Bar {
+  constructor() {
+    mixin(this, Foo);
+  }
+}
+
+new Bar().foo(); // => 'foo'
+```
+
+### Pass parameters to a constructor
+
+```javascript
+import { mixin } from 'es6-mixin';
+
+class Foo {
+  constructor(a, b, c) { ... }
+
+  foo() {
+    return 'foo';
+  }
+}
+
+class Bar {
+  constructor() {
+    mixin(this, Foo, 1, 2, 3); // 1, 2, 3 are passed to Foo's constructor
+  }
+}
+
+new Bar().foo(); // => 'foo'
+```
+
+### Use with ES5-style prototypes
+
+```javascript
+import { mixin } from 'es6-mixin';
+
+function Foo() {
+}
+
+Foo.prototype.foo = function() {
+  return 'foo';
+};
+
+class Bar {
+  constructor() {
+    mixin(this, Foo);
+  }
+}
+
+new Bar().foo(); // => 'foo'
+```
+
+### Use the `Mixin` superclass
+
+```javascript
+import { mixin } from 'es6-mixin';
 
 class Foo extends Mixin {
   foo() {
@@ -39,38 +102,4 @@ class Bar {
 }
 
 new Bar().foo(); // => 'foo'
-```
-
-### Create a mixin from an existing ES6 class
-
-```es6
-import Mixin from 'es6-mixin';
-
-class Foo {
-  constructor(a, b, c) { ... }
-  foo() {
-    return 'foo';
-  }
-}
-
-// Same with a "classic" ES5 prototype:
-//
-//   function Foo(a, b, c) { ... }
-//   Foo.prototype.foo = {
-//     return 'foo';
-//   }
-
-class Bar extends Mixin {
-  static mixin(target = {}) {
-    return Foo.mixin(target, Foo, 1, 2, 3); // 1, 2, 3 are passed to Foo's constructor
-  }
-}
-
-class Baz {
-  constructor() {
-    Bar.mixin(this);
-  }
-}
-
-new Baz().foo(); // => 'foo'
 ```

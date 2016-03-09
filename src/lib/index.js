@@ -13,7 +13,7 @@ function entries(object) {
  * Generic mixin superclass. This class is intended to be extended by actual
  * mixins.
  */
-export default class Mixin {
+export class Mixin {
 
   /**
    * Mixes in this class's methods into an existing object.
@@ -34,4 +34,15 @@ export default class Mixin {
 
     return target;
   }
+}
+
+/**
+ * Mixes in this class's methods into an existing object.
+ * @param {object} [target={}] Any object to mix this class's methods into
+ * @param {object} [MixedIn=Mixin] Constructor to be mixed in
+ * @param {...*} [args] Arguments to pass to the mixed in constructor, if any
+ * @return {object} The original target object, mutated
+ */
+export function mixin(target = {}, MixedIn = Mixin, ...args) {
+  return Mixin.mixin(target, MixedIn, ...args);
 }
