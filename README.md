@@ -1,7 +1,8 @@
 es6-mixin
 =========
 
-Minimalist mixin helper designed to be used with ES6 (ES2015) classes.
+Minimalist mixin helper designed to be used with ES6 (ES2015) classes. Less than
+1 kB minified and gzipped.
 
 [![Latest Stable Version](https://img.shields.io/npm/v/es6-mixin.svg)](https://www.npmjs.com/package/es6-mixin)
 [![License](https://img.shields.io/npm/l/es6-mixin.svg)](https://www.npmjs.com/package/es6-mixin)
