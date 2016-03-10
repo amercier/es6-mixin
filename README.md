@@ -16,14 +16,52 @@ Minimalist mixin helper designed to be used with ES6 (ES2015) classes.
 Installation
 ------------
 
-    npm install --save es6-mixin
+``` shell
+npm install --save es6-mixin
+```
 
 Usage
 -----
 
-### Basic usage
+### `mix(SuperClass, Mixin1, Mixin2, ...)`
 
-```javascript
+``` javascript
+import { mix } from 'es6-mixin';
+
+class Super {
+  foo() {
+    return 'foo';
+  }
+}
+
+class Mixin1 {
+  bar () {
+    return 'bar';
+  }
+}
+
+class Mixin2 {
+  baz () {
+    return 'baz';
+  }
+}
+
+class Sub extends mix(Super, Mixin1, Mixin2) {
+}
+
+new Sub().foo(); // => 'foo'
+new Sub().bar(); // => 'bar'
+new Sub().baz(); // => 'baz'
+new Sub() instanceof Super; // => true
+new Sub() instanceof Mixin1; // => false
+new Sub() instanceof Mixin2; // => false
+```
+
+### `mixin(target, Mixin [, arg1, arg2, ...])`
+
+#### Basic usage
+
+``` javascript
 import { mixin } from 'es6-mixin';
 
 class Foo {
@@ -41,9 +79,9 @@ class Bar {
 new Bar().foo(); // => 'foo'
 ```
 
-### Pass parameters to a constructor
+#### Pass parameters to a constructor
 
-```javascript
+``` javascript
 import { mixin } from 'es6-mixin';
 
 class Foo {
@@ -63,9 +101,9 @@ class Bar {
 new Bar().foo(); // => 'foo'
 ```
 
-### Use with ES5-style prototypes
+#### Use with ES5-style prototypes
 
-```javascript
+``` javascript
 import { mixin } from 'es6-mixin';
 
 function Foo() {
@@ -84,10 +122,10 @@ class Bar {
 new Bar().foo(); // => 'foo'
 ```
 
-### Use the `Mixin` superclass
+### `class extends Mixin { ... }`
 
-```javascript
-import { mixin } from 'es6-mixin';
+``` javascript
+import { Mixin } from 'es6-mixin';
 
 class Foo extends Mixin {
   foo() {
