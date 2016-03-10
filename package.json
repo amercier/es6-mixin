@@ -5,6 +5,10 @@
   "license": "MIT",
   "repository": "amercier/node-es6-mixin",
   "author": "Alex Mercier <pro.alexandre.mercier@gmail.com> (http://amercier.com)",
+  "contributors": [
+    "Alex Mercier <pro.alexandre.mercier@gmail.com> (http://amercier.com)",
+    "Andrew Noyess <noyesa@gmail.com> (https://github.com/noyesa)"
+  ],
   "engines": {
     "node": ">=0.10.0"
   },
