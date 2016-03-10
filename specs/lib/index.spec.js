@@ -1,6 +1,6 @@
 import { expect } from 'chai';
 import sinon, { spy } from 'sinon';
-import { mixin, Mixin } from '../../src/lib/index';
+import { mixin, mix, Mixin } from '../../src/lib/index';
 import { getFixture } from './fixture';
 import { itExists, itIsAFunction } from './helpers';
 
@@ -24,6 +24,64 @@ describe('mixin', () => {
 
     mixin(target, ExistingClass, 1, 2, 3);
     sinon.assert.calledWith(initSpy, 1, 2, 3);
+  });
+});
+
+/** @test {mix} */
+describe('mix', () => {
+  itExists(mixin);
+  itIsAFunction(mixin);
+
+  it('creates a new class', () => {
+    const { ExistingClass } = getFixture();
+    const SubClass = mix(ExistingClass);
+    expect(SubClass).to.be.a('function');
+    expect(new SubClass()).to.be.an.instanceof(SubClass);
+  });
+
+  it('creates a class that extends the given superclass', () => {
+    class Foo {
+      foo() {}
+    }
+    const SubClass = mix(Foo);
+    expect(new SubClass()).to.be.an.instanceof(Foo);
+    expect(new SubClass().init).to.equal(Foo.prototype.init);
+  });
+
+  it('mixes in all given mixins', () => {
+    class Foo {
+      foo() {}
+    }
+    class Bar {
+      bar() {}
+    }
+    class Baz {
+      baz() {}
+    }
+    const SubClass = mix(Foo, Bar, Baz);
+    expect(new SubClass()).not.to.have.key('foo');
+    expect(new SubClass()).to.have.all.keys('bar', 'baz');
+  });
+
+  it('overwrite methods in the given order', () => {
+    class Foo {
+      foo() {
+        return 'Foo';
+      }
+    }
+    class FOo {
+      foo() {
+        return 'FOo';
+      }
+    }
+    class FOO {
+      foo() {
+        return 'FOO';
+      }
+    }
+
+    expect(new (mix(Foo, FOO))().foo()).to.equal('FOO');
+    expect(new (mix(Foo, FOo, FOO))().foo()).to.equal('FOO');
   });
 });
 
