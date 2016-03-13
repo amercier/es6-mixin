@@ -1,7 +1,7 @@
 ---
 engines:
   duplication:
-    enabled: true
+    enabled: false
     config:
       languages:
       - javascript
@@ -11,5 +11,5 @@ engines:
     enabled: true
 ratings:
   paths:
-  - "src/**.js"
+  - **.js
 exclude_paths: []
