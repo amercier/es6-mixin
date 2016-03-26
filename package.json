@@ -47,6 +47,7 @@
     "eslint-config-airbnb": "^6.1.0",
     "istanbul": "^1.0.0-alpha.2",
     "mocha": "^2.4.5",
+    "object-assign": "^4.0.1",
     "sinon": "^1.17.3"
   }
 }
