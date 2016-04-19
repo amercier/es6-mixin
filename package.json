@@ -3,7 +3,7 @@
   "version": "0.3.1",
   "description": "Minimalist mixin helper designed to be used with ES6 (ES2015) classes.",
   "license": "MIT",
-  "repository": "amercier/node-es6-mixin",
+  "repository": "amercier/es6-mixin",
   "author": "Alex Mercier <pro.alexandre.mercier@gmail.com> (http://amercier.com)",
   "contributors": [
     "Alex Mercier <pro.alexandre.mercier@gmail.com> (http://amercier.com)",

@@ -19,7 +19,7 @@ deploy:
   api_key: $NPM_AUTH_TOKEN
   on:
     tags: true
-    repo: amercier/node-es6-mixin # Prevents publishing on PRs
+    repo: amercier/es6-mixin # Prevents publishing on PRs
     condition: $NPM_DEPLOY = true # Prevents publishing on each matrix build
 cache:
   directories:
