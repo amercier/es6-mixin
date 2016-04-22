@@ -11,5 +11,5 @@ engines:
     enabled: true
 ratings:
   paths:
-  - **.js
+  - '**.js'
 exclude_paths: []
