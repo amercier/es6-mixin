@@ -1,3 +1,5 @@
+/* eslint-disable no-empty-function */
+
 import { Mixin } from '../../src/lib/index';
 
 /**
