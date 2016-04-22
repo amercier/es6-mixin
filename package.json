@@ -71,7 +71,7 @@
     ]
   },
   "testling": {
-    "harness": "mocha-tdd",
+    "harness": "mocha",
     "files": "specs/**/*.spec.js",
     "browsers": [
       "ie/8..latest",
