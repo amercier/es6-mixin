@@ -14,6 +14,13 @@ Minimalist mixin helper designed to be used with ES6 (ES2015) classes. Less than
 [![API Documentation](https://doc.esdoc.org/github.com/amercier/es6-mixin/badge.svg)](https://doc.esdoc.org/github.com/amercier/es6-mixin/index.html)
 [![Code Climate](https://img.shields.io/codeclimate/github/amercier/es6-mixin.svg)](https://codeclimate.com/github/amercier/es6-mixin)
 
+[![browser support](https://ci.testling.com/amercier/es6-mixin.png)
+](https://ci.testling.com/amercier/es6-mixin)
+
+For use in NodeJS or in the browser with
+[Browserify](http://browserify.org/), [Webpack](https://webpack.github.io/), or
+any other NPM module bundler.
+
 Installation
 ------------
 
