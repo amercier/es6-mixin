@@ -1,3 +1,5 @@
+/* eslint-disable no-empty-function */
+
 import { expect } from 'chai';
 import sinon, { spy } from 'sinon';
 import { mixin, mix, Mixin } from '../../src/lib/index';
