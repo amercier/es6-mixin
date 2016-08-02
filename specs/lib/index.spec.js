@@ -3,7 +3,7 @@
 import { expect } from 'chai';
 import sinon, { spy } from 'sinon';
 import { mixin, mix, Mixin } from '../../src/lib/index';
-import { getFixture } from './fixture';
+import getFixture from './fixture';
 import { itExists, itIsAFunction } from './helpers';
 
 /** @test {mixin} */
