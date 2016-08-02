@@ -7,7 +7,7 @@ import { Mixin } from '../../src/lib/index';
  * @return {{SimpleMixin: function, PrototypeMixin: function, ClassMixin: function}}
  *   Fixture mixins
  */
-export function getFixture() {
+export default function getFixture() {
   /**
    * A mixin
    */
