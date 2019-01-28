@@ -1,8 +1,15 @@
 {
   "source": "./src",
-  "destination": "./esdoc",
-  "test": {
-    "type": "mocha",
-    "source": "./specs"
-  }
+  "destination": "./docs",
+  "plugins": [
+    { "name": "esdoc-standard-plugin" },
+    {
+      "name": "esdoc-integrate-test-plugin",
+      "option": {
+        "source": "./specs/",
+        "interfaces": ["describe", "it", "context", "suite", "test"],
+        "includes": ["\\.spec\\.js$"]
+      }
+    }
+  ]
 }

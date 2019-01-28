@@ -8,7 +8,6 @@ Minimalist mixin helper designed to be used with ES6 (ES2015) classes. Less than
 [![License](https://img.shields.io/npm/l/es6-mixin.svg)](https://www.npmjs.com/package/es6-mixin)
 [![Build Status](https://img.shields.io/travis/amercier/es6-mixin/master.svg)](https://travis-ci.org/amercier/es6-mixin)
 
-[![Dependency Status](http://img.shields.io/gemnasium/amercier/es6-mixin.svg)](https://gemnasium.com/amercier/es6-mixin)
 [![NPM Downloads](https://img.shields.io/npm/dm/es6-mixin.svg)](https://www.npmjs.com/package/es6-mixin)
 [![Test Coverage](https://img.shields.io/codecov/c/github/amercier/es6-mixin/master.svg)](https://codecov.io/github/amercier/es6-mixin?branch=master)
 [![API Documentation](https://doc.esdoc.org/github.com/amercier/es6-mixin/badge.svg)](https://doc.esdoc.org/github.com/amercier/es6-mixin/index.html)

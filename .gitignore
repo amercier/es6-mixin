@@ -1,6 +1,11 @@
 /.nyc_output
 /coverage
 /dist
-/esdoc
+/docs
 /node_modules
 npm-debug.log
+
+# Lockfiles for apps, but not for packages.
+# https://github.com/sindresorhus/ama/issues/479#issuecomment-310661514
+/package-lock.json
+/yarn.lock

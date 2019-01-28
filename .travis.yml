@@ -2,17 +2,23 @@ sudo: false
 language: node_js
 matrix:
   include:
-  - node_js: 6.3 # Current
-    env: BUILD_DOCS=true REPORT_COVERAGE=true
-  - node_js: 4.4 # LTS
-    env: NPM_DEPLOY=true
-  - node_js: 4.0 # Minimum supported
+    - node_js: node # Current
+      env: BUILD_DOCS=true REPORT_COVERAGE=true
+    - node_js: lts/* # Latest LTS
+      env: NPM_DEPLOY=true
+    - node_js: lts/carbon
+    - node_js: lts/boron
+    - node_js: 4 # Minimum required
+      before_script: 'echo "Warning: skipping linting on NodeJS 4" >&2'
+      script: 'echo "Warning: disabled code coverage on NodeJS 4" >&2 && npm run mocha'
+before_script:
+  - npm run lint
 script:
-- npm test -- -- --timeout 10000
-- '[[ "$BUILD_DOCS" != true ]] || npm run doc' # Ensures ESDoc generation doesn't fail
+  - npm test -- -- --timeout 10000
+  - '[[ "$BUILD_DOCS" != true ]] || npm run doc' # Ensures ESDoc generation doesn't fail
 after_success:
-- '[[ "$REPORT_COVERAGE" != true ]] || cat coverage/lcov.info | ./node_modules/.bin/codecov'
-- '[[ "$REPORT_COVERAGE" != true ]] || cat coverage/lcov.info | ./node_modules/.bin/codeclimate-test-reporter'
+  - '[[ "$REPORT_COVERAGE" != true ]] || cat coverage/lcov.info | ./node_modules/.bin/codecov'
+  - '[[ "$REPORT_COVERAGE" != true ]] || cat coverage/lcov.info | ./node_modules/.bin/codeclimate-test-reporter'
 deploy:
   provider: npm
   email: pro.alexandre.mercier@gmail.com

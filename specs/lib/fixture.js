@@ -16,7 +16,8 @@ export default function getFixture() {
       super();
       this.init(...args);
     }
-    init() {}
+
+    init() {} // eslint-disable-line class-methods-use-this
   }
   SimpleMixin.prototype.uselessProperty = true;
 
@@ -44,7 +45,8 @@ export default function getFixture() {
     constructor(...args) {
       this.init(...args);
     }
-    init() {}
+
+    init() {} // eslint-disable-line class-methods-use-this
   }
 
   /**
