@@ -56,6 +56,28 @@
     "rimraf": "^2.6.3",
     "sinon": "^7.2.3"
   },
+  "eslintConfig": {
+    "extends": "airbnb-base",
+    "env": {
+      "browser": false
+    },
+    "rules": {
+      "no-param-reassign": 0
+    },
+    "overrides": [
+      {
+        "files": "specs/**/*.js",
+        "env": {
+          "mocha": true
+        },
+        "rules": {
+          "no-unused-expressions": 0,
+          "import/no-extraneous-dependencies": ["error", {"devDependencies": true}]
+        }
+      }
+
+    ]
+  },
   "nyc": {
     "exclude": "specs/**/*.spec.js",
     "sourceMap": false,
