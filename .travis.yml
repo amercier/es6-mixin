@@ -7,7 +7,10 @@ matrix:
     - node_js: lts/* # Latest LTS
       env: NPM_DEPLOY=true
     - node_js: lts/carbon
-    - node_js: lts/boron # Minimum required
+    - node_js: lts/boron
+    - node_js: 4 # Minimum required
+      before_script: 'echo "Warning: skipping linting on NodeJS 4" >&2'
+      script: 'echo "Warning: disabled code coverage on NodeJS 4" >&2 && npm run mocha'
 before_script:
   - npm run lint
 script:
