@@ -19,7 +19,7 @@
     "lint": "eslint --ignore-path .gitignore .",
     "mocha": "mocha specs --recursive --compilers js:babel-register",
     "start": "export NODE_ENV=development; npm run mocha -- --watch --growl",
-    "test": "export NODE_ENV=test; npm run lint && rimraf coverage && nyc npm run mocha"
+    "test": "export NODE_ENV=test; rimraf coverage && nyc npm run mocha"
   },
   "main": "dist/lib/index.js",
   "keywords": [

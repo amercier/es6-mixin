@@ -8,12 +8,14 @@ matrix:
       env: NPM_DEPLOY=true
     - node_js: lts/carbon
     - node_js: lts/boron # Minimum required
+before_script:
+  - npm run lint
 script:
-- npm test -- -- --timeout 10000
-- '[[ "$BUILD_DOCS" != true ]] || npm run doc' # Ensures ESDoc generation doesn't fail
+  - npm test -- -- --timeout 10000
+  - '[[ "$BUILD_DOCS" != true ]] || npm run doc' # Ensures ESDoc generation doesn't fail
 after_success:
-- '[[ "$REPORT_COVERAGE" != true ]] || cat coverage/lcov.info | ./node_modules/.bin/codecov'
-- '[[ "$REPORT_COVERAGE" != true ]] || cat coverage/lcov.info | ./node_modules/.bin/codeclimate-test-reporter'
+  - '[[ "$REPORT_COVERAGE" != true ]] || cat coverage/lcov.info | ./node_modules/.bin/codecov'
+  - '[[ "$REPORT_COVERAGE" != true ]] || cat coverage/lcov.info | ./node_modules/.bin/codeclimate-test-reporter'
 deploy:
   provider: npm
   email: pro.alexandre.mercier@gmail.com
