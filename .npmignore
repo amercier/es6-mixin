@@ -1,6 +1,0 @@
-*.log
-.*
-coverage
-docs
-esdoc.json
-specs

@@ -22,6 +22,9 @@
     "test": "export NODE_ENV=test; rimraf coverage && nyc npm run mocha"
   },
   "main": "dist/lib/index.js",
+  "files": [
+    "dist"
+  ],
   "keywords": [
     "mixin",
     "mixins",
