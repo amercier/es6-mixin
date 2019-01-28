@@ -5,7 +5,7 @@ engines:
       languages:
       - javascript
     exclude_paths:
-    - specs
+    - specs/**
   eslint:
     enabled: true
     channel: 'eslint-2'
