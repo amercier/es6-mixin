@@ -18,7 +18,6 @@ script:
   - '[[ "$BUILD_DOCS" != true ]] || npm run doc' # Ensures ESDoc generation doesn't fail
 after_success:
   - '[[ "$REPORT_COVERAGE" != true ]] || cat coverage/lcov.info | ./node_modules/.bin/codecov'
-  - '[[ "$REPORT_COVERAGE" != true ]] || cat coverage/lcov.info | ./node_modules/.bin/codeclimate-test-reporter'
 deploy:
   provider: npm
   email: pro.alexandre.mercier@gmail.com
