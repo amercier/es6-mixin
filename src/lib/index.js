@@ -14,7 +14,6 @@ function entries(object) {
  * mixins.
  */
 export class Mixin {
-
   /**
    * Mixes in this class's methods into an existing object.
    * @param {object} [target={}] Any object to mix this class's methods into
@@ -28,9 +27,13 @@ export class Mixin {
     // Get all the methods from this class, bind them to the instance, and copy
     // them to the target object.
     entries(MixedIn.prototype)
-      .filter(([methodName, method]) =>
-        typeof method === 'function' && methodName !== 'constructor')
-      .forEach(([methodName, method]) => (target[methodName] = method.bind(instance)));
+      .filter(
+        ([methodName, method]) => typeof method === 'function' && methodName !== 'constructor',
+      )
+      .forEach(
+        // eslint-disable-next-line no-return-assign
+        ([methodName, method]) => (target[methodName] = method.bind(instance)),
+      );
 
     return target;
   }

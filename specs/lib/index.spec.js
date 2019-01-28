@@ -43,7 +43,7 @@ describe('mix', () => {
 
   it('creates a class that extends the given superclass', () => {
     class Foo {
-      foo() {}
+      foo() {} // eslint-disable-line class-methods-use-this
     }
     const SubClass = mix(Foo);
     expect(new SubClass()).to.be.an.instanceof(Foo);
@@ -51,6 +51,7 @@ describe('mix', () => {
   });
 
   it('mixes in all given mixins', () => {
+    /* eslint-disable class-methods-use-this */
     class Foo {
       foo() {}
     }
@@ -60,12 +61,15 @@ describe('mix', () => {
     class Baz {
       baz() {}
     }
+    /* eslint-enable class-methods-use-this */
+
     const SubClass = mix(Foo, Bar, Baz);
     expect(new SubClass()).not.to.have.key('foo');
     expect(new SubClass()).to.have.all.keys('bar', 'baz');
   });
 
   it('overwrite methods in the given order', () => {
+    /* eslint-disable class-methods-use-this */
     class Foo {
       foo() {
         return 'Foo';
@@ -81,6 +85,7 @@ describe('mix', () => {
         return 'FOO';
       }
     }
+    /* eslint-enable class-methods-use-this */
 
     expect(new (mix(Foo, FOO))().foo()).to.equal('FOO');
     expect(new (mix(Foo, FOo, FOO))().foo()).to.equal('FOO');
