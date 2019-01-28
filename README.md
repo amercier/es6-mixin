@@ -11,7 +11,7 @@ Minimalist mixin helper designed to be used with ES6 (ES2015) classes. Less than
 [![NPM Downloads](https://img.shields.io/npm/dm/es6-mixin.svg)](https://www.npmjs.com/package/es6-mixin)
 [![Test Coverage](https://img.shields.io/codecov/c/github/amercier/es6-mixin/master.svg)](https://codecov.io/github/amercier/es6-mixin?branch=master)
 [![API Documentation](https://doc.esdoc.org/github.com/amercier/es6-mixin/badge.svg)](https://doc.esdoc.org/github.com/amercier/es6-mixin/index.html)
-[![Code Climate](https://img.shields.io/codeclimate/github/amercier/es6-mixin.svg)](https://codeclimate.com/github/amercier/es6-mixin)
+[![Code Climate](https://img.shields.io/codeclimate/github/amercier/es6-mixin.svg)](https://codeclimate.com/github/amercier/es6-mixin) [![Greenkeeper badge](https://badges.greenkeeper.io/amercier/es6-mixin.svg)](https://greenkeeper.io/)
 
 Installation
 ------------
